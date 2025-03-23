@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTPBot Settings</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9fafb;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-2xl">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <div class="flex items-center justify-center mb-4">
+                <i class="fas fa-robot text-4xl text-blue-600 mr-3"></i>
+                <h1 class="text-3xl font-bold text-gray-800">OTPBot Settings</h1>
+            </div>
+            <p class="text-gray-600">Configure your OTP detection and security preferences</p>
+        </header>
+
+        <!-- Main Settings Form -->
+        <main class="bg-white rounded-lg shadow-lg p-6">
+            <form id="settingsForm" class="space-y-8">
+                <!-- Auto-Capture Section -->
+                <section class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800 flex items-center">
+                        <i class="fas fa-magic text-blue-600 mr-2"></i>
+                        Auto-Capture Settings
+                    </h2>
+                    
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                        <div>
+                            <label class="font-medium text-gray-700">Enable Auto-Capture</label>
+                            <p class="text-sm text-gray-500">Automatically detect and capture OTPs from web pages</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="enableAutoCapture" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                        <div>
+                            <label class="font-medium text-gray-700">Enable Notifications</label>
+                            <p class="text-sm text-gray-500">Show notifications when new OTPs are detected</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="enableNotifications" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Security Section -->
+                <section class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800 flex items-center">
+                        <i class="fas fa-shield-alt text-blue-600 mr-2"></i>
+                        Security Settings
+                    </h2>
+                    
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                        <div>
+                            <label class="font-medium text-gray-700">Enhanced Security Mode</label>
+                            <p class="text-sm text-gray-500">Enforce strict CSP and disable inline scripts</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="enableEnhancedSecurity" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                        <div>
+                            <label class="font-medium text-gray-700">Auto-Clear OTPs</label>
+                            <p class="text-sm text-gray-500">Automatically clear OTPs after 1 hour</p>
+                        </div>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="enableAutoClear" class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        </label>
+                    </div>
+                </section>
+
+                <!-- Advanced Settings -->
+                <section class="space-y-4">
+                    <h2 class="text-xl font-semibold text-gray-800 flex items-center">
+                        <i class="fas fa-cog text-blue-600 mr-2"></i>
+                        Advanced Settings
+                    </h2>
+                    
+                    <div class="space-y-2">
+                        <label class="block font-medium text-gray-700">Custom OTP Pattern</label>
+                        <input type="text" id="customPattern" 
+                               class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                               placeholder="Default: \d{4,6}"
+                               value="\d{4,6}">
+                        <p class="text-sm text-gray-500">Use regular expression to define custom OTP pattern</p>
+                    </div>
+                </section>
+
+                <!-- Save Button -->
+                <div class="pt-6">
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center justify-center">
+                        <i class="fas fa-save mr-2"></i>
+                        Save Settings
+                    </button>
+                </div>
+            </form>
+        </main>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="hidden fixed bottom-4 right-4 px-4 py-2 rounded-lg shadow-lg z-50">
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+
+    <script src="options.js" type="module"></script>
+</body>
+</html>
